@@ -1,0 +1,13 @@
+[package]
+name = "fast-float-compare"
+version = "0.1.0"
+edition = "2021"
+
+[dev-dependencies]
+rust_decimal = "1.34"
+criterion = "0.5"
+rand = "0.8"
+
+[[bench]]
+name = "float_comparison"
+harness = false
