@@ -1,5 +1,12 @@
 # Floating Point Comparison Benchmark
 
+[![Build Status](https://github.com/KhaledYassin/fast-float-compare/actions/workflows/ci.yml/badge.svg)](https://github.com/KhaledYassin/fast-float-compare/actions/workflows/ci.yml)
+[![Code Coverage](https://codecov.io/gh/KhaledYassin/fast-float-compare/branch/main/graph/badge.svg)](https://codecov.io/gh/KhaledYassin/fast-float-compare)
+[![Crates.io](https://img.shields.io/crates/v/fast-float-compare)](https://crates.io/crates/fast-float-compare)
+[![Documentation](https://docs.rs/fast-float-compare/badge.svg)](https://docs.rs/fast-float-compare)
+[![License](https://img.shields.io/crates/l/fast-float-compare.svg)](LICENSE)
+[![Rust Version](https://img.shields.io/badge/rustc-1.70+-lightgray.svg)](https://blog.rust-lang.org/2023/03/30/Rust-1.70.0.html)
+
 A lightweight experiment comparing different approaches to floating-point number comparison in Rust.
 
 ## Objective

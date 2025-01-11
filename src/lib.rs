@@ -40,6 +40,24 @@ pub struct Float {
 }
 
 impl Float {
+    pub const ZERO: Float = Float {
+        mantissa: 0,
+        exponent: 0,
+        sign: true,
+    };
+
+    pub const ONE: Float = Float {
+        mantissa: 0x10000000000000,
+        exponent: 1023,
+        sign: true,
+    };
+
+    pub const TWO: Float = Float {
+        mantissa: 0x10000000000000,
+        exponent: 1024,
+        sign: true,
+    };
+
     fn new(mantissa: u64, exponent: i16, sign: bool) -> Self {
         Self {
             mantissa,
@@ -194,6 +212,13 @@ mod tests {
     }
 
     #[test]
+    fn test_const_values() {
+        assert!(Float::from_f64(0.0).unwrap() == Float::ZERO);
+        assert!(Float::from_f64(1.0).unwrap() == Float::ONE);
+        assert!(Float::from_f64(2.0).unwrap() == Float::TWO);
+    }
+
+    #[test]
     fn test_f64_roundtrip() {
         let test_values = vec![1.23, -4.56, 0.0, 1234.5678, -0.00123, 100.0, -100.0];
 
@@ -248,5 +273,17 @@ mod tests {
         assert!(a == e);
         assert!(a != b);
         assert!(c != f);
+    }
+
+    #[test]
+    fn test_ordering_vector() {
+        let values = [1.23, -4.56, 0.0, 1234.5678, -0.00123, 100.0, -100.0];
+        let mut sorted: Vec<Float> = values
+            .iter()
+            .map(|&n| Float::from_f64(n).unwrap())
+            .collect();
+        sorted.sort();
+
+        assert!(sorted.windows(2).all(|w| w[0] <= w[1]));
     }
 }
