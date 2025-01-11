@@ -150,5 +150,10 @@ fn benchmark_ordering(c: &mut Criterion) {
     });
 }
 
-criterion_group!(benches, benchmark_comparisons, benchmark_conversion, benchmark_ordering);
+criterion_group!(
+    benches,
+    benchmark_comparisons,
+    benchmark_conversion,
+    benchmark_ordering
+);
 criterion_main!(benches);
