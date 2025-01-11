@@ -33,12 +33,21 @@ The project uses Criterion.rs for benchmarking. To run the benchmarks:
 cargo bench
 ```
 
-This will compare the performance of:
+### Latest Benchmark Results (results will likely depending on hardware)
 
-- Comparing numbers using `Decimal`
-- Comparing numbers using our minimal `Float` implementation
-- Converting between `f64` and `Float`
-- Converting between `f64` and `Decimal`
+Specs:
+
+- 2019 MacBook Pro
+- CPU: 2.6 GHz 6-Core Intel Core i7
+- RAM: 16GB 2667 MHz DDR4
+- OS: macOS Sequoia 15.2
+
+| Operation           | Float (this lib) | Decimal    | Ord Float |
+| ------------------- | --------------- | ---------- | --------- |
+| Comparison          | 1.23 µs         | 6.84 µs    | 2.18 µs   |
+| Conversion from f64 | 3.24 µs         | 234.83 µs  | 412.51 ns |
+| Conversion to f64   | 1.35 µs         | 42.60 µs   | 408.87 ns |
+| Ordering            | 2.27 µs         | 7.23 µs    | 861.28 ns |
 
 ## Usage
 
