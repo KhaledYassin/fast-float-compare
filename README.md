@@ -33,7 +33,7 @@ The project uses Criterion.rs for benchmarking. To run the benchmarks:
 cargo bench
 ```
 
-### Latest Benchmark Results (results will likely depending on hardware)
+### Latest Benchmark Results (results will likely vary depending on hardware)
 
 Specs:
 
